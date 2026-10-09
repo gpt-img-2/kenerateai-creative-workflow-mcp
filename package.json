@@ -1,0 +1,28 @@
+{
+  "name": "kenerateai-creative-workflow-mcp",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.32.1",
+  "description": "Read-only MCP tools for planning and reviewing image, video, and audio creation workflows with Kenerate AI resources.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": { "kenerateai-creative-workflow-mcp": "bin/kenerateai-creative-workflow-mcp.js" },
+  "files": ["bin/", "dist/", "openclaw/", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "node scripts/smoke-mcp-client.mjs",
+    "validate": "pnpm typecheck && pnpm test && pnpm build && pnpm smoke"
+  },
+  "keywords": ["mcp", "model-context-protocol", "creative-workflow", "prompt-design", "image-generation", "video-generation", "audio-generation", "openclaw"],
+  "author": { "name": "Kenerate AI", "url": "https://kenerateai.org" },
+  "repository": { "type": "git", "url": "git+https://github.com/gpt-img-2/kenerateai-creative-workflow-mcp.git" },
+  "bugs": { "url": "https://github.com/gpt-img-2/kenerateai-creative-workflow-mcp/issues" },
+  "homepage": "https://kenerateai.org/workspace",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "dependencies": { "@modelcontextprotocol/server": "2.3.1", "zod": "4.4.3" },
+  "devDependencies": { "@modelcontextprotocol/client": "2.3.1", "@types/node": "^24.3.0", "tsx": "^4.20.5", "typescript": "^5.9.2" }
+}
